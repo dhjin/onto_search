@@ -1,0 +1,134 @@
+/* Custom styles for the ontology search application */
+
+/* Main container styling */
+.main-container {
+    min-height: 100vh;
+    padding-bottom: 60px; /* For footer */
+    position: relative;
+}
+
+/* Card styling */
+.card {
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    font-weight: bold;
+    border-radius: 8px 8px 0 0 !important;
+}
+
+/* Query textarea */
+#queryTextArea {
+    min-height: 150px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
+}
+
+/* Query suggestions */
+#suggestionsList {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.list-group-item-action:hover {
+    cursor: pointer;
+}
+
+/* Results table styling */
+#resultsTable {
+    width: 100% !important;
+}
+
+#resultsTable thead th {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+#resultsTable_wrapper .dataTables_filter {
+    margin-bottom: 15px;
+}
+
+.results-container {
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+
+/* Sample query container */
+#sampleQueries {
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.copy-example {
+    cursor: pointer;
+}
+
+/* Ontology explorer */
+.ontology-explorer {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.nav-tabs .nav-link.active {
+    font-weight: bold;
+}
+
+/* Toast notification */
+.toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1100;
+}
+
+/* Footer styling */
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+
+/* URI list styling */
+.uri-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.uri-list li {
+    margin-bottom: 8px;
+    word-break: break-all;
+}
+
+.uri-list-item:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Info badges */
+.info-badge {
+    margin-left: 5px;
+    cursor: help;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card-header {
+        padding: 0.75rem;
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+    
+    .btn-responsive {
+        padding: 0.375rem 0.5rem;
+        font-size: 0.875rem;
+    }
+}

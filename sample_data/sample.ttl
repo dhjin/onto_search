@@ -1,0 +1,125 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix dbr: <http://dbpedia.org/resource/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+# DBpedia sample data - Cities and Countries
+
+# Country class
+dbo:Country a owl:Class ;
+    rdfs:label "Country"@en ;
+    rdfs:comment "A country is a distinct territorial body or political entity."@en ;
+    rdfs:subClassOf dbo:Place .
+
+# City class
+dbo:City a owl:Class ;
+    rdfs:label "City"@en ;
+    rdfs:comment "A large and permanent human settlement."@en ;
+    rdfs:subClassOf dbo:Place .
+
+# Properties
+dbo:capital a owl:ObjectProperty ;
+    rdfs:label "capital"@en ;
+    rdfs:comment "The capital city of a country."@en ;
+    rdfs:domain dbo:Country ;
+    rdfs:range dbo:City .
+
+dbo:country a owl:ObjectProperty ;
+    rdfs:label "country"@en ;
+    rdfs:comment "The country in which the feature is located."@en ;
+    rdfs:domain dbo:Place ;
+    rdfs:range dbo:Country .
+
+dbo:populationTotal a owl:DatatypeProperty ;
+    rdfs:label "population total"@en ;
+    rdfs:comment "Total population of a place."@en ;
+    rdfs:domain dbo:Place ;
+    rdfs:range xsd:nonNegativeInteger .
+
+dbo:areaTotal a owl:DatatypeProperty ;
+    rdfs:label "area total"@en ;
+    rdfs:comment "Total area of a place."@en ;
+    rdfs:domain dbo:Place ;
+    rdfs:range xsd:double .
+
+dbo:currency a owl:ObjectProperty ;
+    rdfs:label "currency"@en ;
+    rdfs:comment "The currency used in the country."@en ;
+    rdfs:domain dbo:Country ;
+    rdfs:range dbo:Currency .
+
+# Countries
+dbr:United_States a dbo:Country ;
+    rdfs:label "United States"@en ;
+    dbo:capital dbr:Washington,_D.C. ;
+    dbo:populationTotal 331002651 ;
+    dbo:areaTotal 9833517.0 ;
+    dc:description "The United States of America is a country primarily located in North America." .
+
+dbr:United_Kingdom a dbo:Country ;
+    rdfs:label "United Kingdom"@en ;
+    dbo:capital dbr:London ;
+    dbo:populationTotal 67886011 ;
+    dbo:areaTotal 242495.0 ;
+    dc:description "The United Kingdom of Great Britain and Northern Ireland is a sovereign country in north-western Europe." .
+
+dbr:Japan a dbo:Country ;
+    rdfs:label "Japan"@en ;
+    dbo:capital dbr:Tokyo ;
+    dbo:populationTotal 126476461 ;
+    dbo:areaTotal 377975.0 ;
+    dc:description "Japan is an island country in East Asia." .
+
+dbr:France a dbo:Country ;
+    rdfs:label "France"@en ;
+    dbo:capital dbr:Paris ;
+    dbo:populationTotal 65273511 ;
+    dbo:areaTotal 640679.0 ;
+    dc:description "France is a country primarily located in Western Europe." .
+
+dbr:Germany a dbo:Country ;
+    rdfs:label "Germany"@en ;
+    dbo:capital dbr:Berlin ;
+    dbo:populationTotal 83783942 ;
+    dbo:areaTotal 357114.0 ;
+    dc:description "Germany is a country in Central Europe." .
+
+# Cities
+dbr:Washington,_D.C. a dbo:City ;
+    rdfs:label "Washington, D.C."@en ;
+    dbo:country dbr:United_States ;
+    dbo:populationTotal 689545 ;
+    dc:description "Washington, D.C. is the capital city of the United States." .
+
+dbr:New_York_City a dbo:City ;
+    rdfs:label "New York City"@en ;
+    dbo:country dbr:United_States ;
+    dbo:populationTotal 8804190 ;
+    dc:description "New York City is the most populous city in the United States." .
+
+dbr:London a dbo:City ;
+    rdfs:label "London"@en ;
+    dbo:country dbr:United_Kingdom ;
+    dbo:populationTotal 8982000 ;
+    dc:description "London is the capital and largest city of England and the United Kingdom." .
+
+dbr:Tokyo a dbo:City ;
+    rdfs:label "Tokyo"@en ;
+    dbo:country dbr:Japan ;
+    dbo:populationTotal 13929286 ;
+    dc:description "Tokyo is the capital and most populous prefecture of Japan." .
+
+dbr:Paris a dbo:City ;
+    rdfs:label "Paris"@en ;
+    dbo:country dbr:France ;
+    dbo:populationTotal 2148271 ;
+    dc:description "Paris is the capital and most populous city of France." .
+
+dbr:Berlin a dbo:City ;
+    rdfs:label "Berlin"@en ;
+    dbo:country dbr:Germany ;
+    dbo:populationTotal 3669491 ;
+    dc:description "Berlin is the capital and largest city of Germany." .

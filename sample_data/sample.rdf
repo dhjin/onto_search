@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:foaf="http://xmlns.com/foaf/0.1/"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+  <!-- Basic FOAF (Friend of a Friend) example -->
+  
+  <!-- Person 1 -->
+  <foaf:Person rdf:about="http://example.org/person/john">
+    <foaf:name>John Smith</foaf:name>
+    <foaf:title>Mr</foaf:title>
+    <foaf:givenName>John</foaf:givenName>
+    <foaf:familyName>Smith</foaf:familyName>
+    <foaf:mbox rdf:resource="mailto:john@example.org"/>
+    <foaf:homepage rdf:resource="http://example.org/john"/>
+    <foaf:knows rdf:resource="http://example.org/person/jane"/>
+    <foaf:knows rdf:resource="http://example.org/person/mike"/>
+    <dc:description>John is a software developer interested in semantic web technologies.</dc:description>
+  </foaf:Person>
+  
+  <!-- Person 2 -->
+  <foaf:Person rdf:about="http://example.org/person/jane">
+    <foaf:name>Jane Brown</foaf:name>
+    <foaf:title>Dr</foaf:title>
+    <foaf:givenName>Jane</foaf:givenName>
+    <foaf:familyName>Brown</foaf:familyName>
+    <foaf:mbox rdf:resource="mailto:jane@example.org"/>
+    <foaf:homepage rdf:resource="http://example.org/jane"/>
+    <foaf:knows rdf:resource="http://example.org/person/john"/>
+    <dc:description>Jane is a researcher in artificial intelligence and knowledge representation.</dc:description>
+  </foaf:Person>
+  
+  <!-- Person 3 -->
+  <foaf:Person rdf:about="http://example.org/person/mike">
+    <foaf:name>Mike Johnson</foaf:name>
+    <foaf:title>Mr</foaf:title>
+    <foaf:givenName>Mike</foaf:givenName>
+    <foaf:familyName>Johnson</foaf:familyName>
+    <foaf:mbox rdf:resource="mailto:mike@example.org"/>
+    <foaf:knows rdf:resource="http://example.org/person/john"/>
+    <dc:description>Mike works as a data scientist focusing on large knowledge graphs.</dc:description>
+  </foaf:Person>
+  
+  <!-- Document -->
+  <foaf:Document rdf:about="http://example.org/documents/semantic_web_intro">
+    <dc:title>Introduction to Semantic Web</dc:title>
+    <dc:creator rdf:resource="http://example.org/person/jane"/>
+    <dc:date>2023-01-15</dc:date>
+    <dc:description>An introductory guide to Semantic Web technologies including RDF, OWL and SPARQL.</dc:description>
+  </foaf:Document>
+  
+  <!-- Organization -->
+  <foaf:Organization rdf:about="http://example.org/organizations/semantic_web_company">
+    <foaf:name>Semantic Web Solutions</foaf:name>
+    <foaf:homepage rdf:resource="http://example.org/sws"/>
+    <dc:description>A company specializing in semantic web technologies and knowledge graph applications.</dc:description>
+  </foaf:Organization>
+  
+  <!-- Group -->
+  <foaf:Group rdf:about="http://example.org/groups/research_team">
+    <foaf:name>AI Knowledge Representation Research Team</foaf:name>
+    <foaf:member rdf:resource="http://example.org/person/john"/>
+    <foaf:member rdf:resource="http://example.org/person/jane"/>
+    <dc:description>A research team focusing on knowledge representation and reasoning.</dc:description>
+  </foaf:Group>
+  
+  <!-- Project -->
+  <rdf:Description rdf:about="http://example.org/projects/knowledge_graph">
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+    <dc:title>Enterprise Knowledge Graph</dc:title>
+    <dc:creator rdf:resource="http://example.org/groups/research_team"/>
+    <dc:contributor rdf:resource="http://example.org/person/mike"/>
+    <dc:description>A project to develop an enterprise-wide knowledge graph platform.</dc:description>
+  </rdf:Description>
+
+</rdf:RDF>
